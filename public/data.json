@@ -1,0 +1,42 @@
+[
+    {
+      "name":"Assorted Coffee",
+      "description":"Neque porro quisquam est, qui dolore ipsum quia dolor sit amet, consectetur adipisci velit, sed quia non incidunt lores ta porro ame. numquam eius modi tempora incidunt lores ta porro ame.",
+      "category":"Groceries",
+      "img":"https://i.ibb.co/0Xw4cXT/coffee-asorted-300x300.jpg",
+      "price":35,
+      "quantity":100
+    },
+    {
+      "name":"Hand Sanitizer",
+      "description":"Neque porro quisquam est, qui dolore ipsum quia dolor sit amet, consectetur adipisci velit, sed quia non incidunt lores ta porro ame. numquam eius modi tempora incidunt lores ta porro ame.",
+      "category":"Groceries",
+      "img":"https://i.ibb.co/PC8mqjf/sanitizer-300x300.jpg",
+      "price":70,
+      "quantity":100
+    },
+    {
+      "name":"Handpicked Red Chillies",
+      "description":"Neque porro quisquam est, qui dolore ipsum quia dolor sit amet, consectetur adipisci velit, sed quia non incidunt lores ta porro ame. numquam eius modi tempora incidunt lores ta porro ame.",
+      "category":"Groceries",
+      "img":"https://i.ibb.co/xf2LtyM/red-chillies-300x300.jpg",
+      "price":105,
+      "quantity":100
+    },
+    {
+      "name":"Natural Extracted Edible Oil",
+      "description":"Neque porro quisquam est, qui dolore ipsum quia dolor sit amet, consectetur adipisci velit, sed quia non incidunt lores ta porro ame. numquam eius modi tempora incidunt lores ta porro ame.",
+      "category":"Groceries",
+      "img":"https://i.ibb.co/6PymD7k/edible-oil-300x300.jpg",
+      "price":140,
+      "quantity":100
+    },
+    {
+      "name":"Fresh Orange Juice",
+      "description":"Neque porro quisquam est, qui dolore ipsum quia dolor sit amet, consectetur adipisci velit, sed quia non incidunt lores ta porro ame. numquam eius modi tempora incidunt lores ta porro ame.",
+      "category":"Groceries",
+      "img":"https://i.ibb.co/9vzBs7Q/orage-juice-kariz-300x300.jpg",
+      "price":175,
+      "quantity":100
+    }
+]
