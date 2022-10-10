@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { BsFillCartCheckFill } from "react-icons/bs";
 
 const Header = () => {
   return (
@@ -36,7 +37,25 @@ const Header = () => {
                   About
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/login">
+                  Login
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/signup">
+                  Signup
+                </Link>
+              </li>
             </ul>
+            {/* cart */}
+            <div className="me-2 animate__animated animate__slideInLeft">
+              <Link to="/cart">
+                <BsFillCartCheckFill
+                  style={{ fontSize: "30px", color: "orange" }}
+                />
+              </Link>
+            </div>
             <form className="d-flex" role="search">
               <input
                 className="form-control me-2"

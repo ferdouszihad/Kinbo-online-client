@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Product from "./Product";
 
-const Products = () => {
+const Products = (props) => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch("data.json")
+    fetch("http://localhost:8000/api/product")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
@@ -13,7 +13,7 @@ const Products = () => {
     <div className="row">
       {
       products.map((product) => (
-        <Product product={product} />
+        <Product  product={product} />
       ))
       }
     </div>
