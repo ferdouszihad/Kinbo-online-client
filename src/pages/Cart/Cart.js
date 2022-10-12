@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 const Cart = () => {
   const [cart, setCart] = useState([]);
   const [remove, setRemove] = useState(true);
+  const [total,setTotal] = useState(0);
 
   useEffect(() => {
     const url = `http://localhost:8000/api/cart`;
@@ -13,8 +14,15 @@ const Cart = () => {
       },
     })
       .then((res) => res.json())
-      .then((data) => setCart(data));
-  }, [remove]);
+      .then((data) => {
+        setCart(data);
+        let sum =0;
+        data.forEach(item =>{
+           sum = sum + (item.price * item.quantity)
+        })
+        setTotal(sum);
+      });
+  }, [cart,remove,total]);
 
   const handleDeleteItem = (id) => {
     const url = `http://localhost:8000/api/cart/${id}`;
@@ -48,7 +56,7 @@ const Cart = () => {
       method: "PUT",
       headers: {
         "Content-Type": "Application/json",
-        "Authorization": localStorage.getItem("token"),
+        Authorization: localStorage.getItem("token"),
       },
       body: JSON.stringify({ _id, quantity }),
     });
@@ -58,10 +66,10 @@ const Cart = () => {
     // })
 
     const data = await res.json();
-    if(data.status){
-        toast.success(data.message, {
-            position: toast.POSITION.TOP_CENTER,
-          });
+    if (data.status) {
+      toast.success(data.message, {
+        position: toast.POSITION.TOP_CENTER,
+      });
     }
   };
 
@@ -115,6 +123,35 @@ const Cart = () => {
           </table>
         </div>
       )}
+      {/* cart total */}
+      <div className="row my-5">
+        <div className="col-md-4 ms-auto">
+          <table class="table">
+            <thead class="table-dark">
+              <tr>
+                <th colSpan={2}>Cart totals</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>SubTotal</td>
+                <td>ট {total}</td>
+              </tr>
+              <tr>
+                <td>Total</td>
+                <td>ট {total}</td>
+              </tr>
+              <tr>
+                <td colSpan={2}>
+                  <button className="btn btn-warning w-100 mt-2">
+                    Shipping
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   );
 };
