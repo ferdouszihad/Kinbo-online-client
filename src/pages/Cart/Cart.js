@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { FaTrash } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 const Cart = () => {
   const [cart, setCart] = useState([]);
   const [remove, setRemove] = useState(true);
   const [total,setTotal] = useState(0);
-
+  const navigate = useNavigate();
   useEffect(() => {
     const url = `http://localhost:8000/api/cart`;
     fetch(url, {
@@ -22,7 +23,7 @@ const Cart = () => {
         })
         setTotal(sum);
       });
-  }, [cart,remove,total]);
+  }, [remove,total]);
 
   const handleDeleteItem = (id) => {
     const url = `http://localhost:8000/api/cart/${id}`;
@@ -60,18 +61,20 @@ const Cart = () => {
       },
       body: JSON.stringify({ _id, quantity }),
     });
-    // .then(res=>res.json())
-    // .then(data => {
-    //     console.log(data);
-    // })
+  
 
     const data = await res.json();
     if (data.status) {
+      setRemove(!remove);
       toast.success(data.message, {
         position: toast.POSITION.TOP_CENTER,
       });
     }
   };
+
+  const handleShipping = () =>{
+     navigate('/shipping');
+  }
 
   return (
     <div className="container text-center">
@@ -143,7 +146,9 @@ const Cart = () => {
               </tr>
               <tr>
                 <td colSpan={2}>
-                  <button className="btn btn-warning w-100 mt-2">
+                  <button 
+                  onClick={handleShipping}
+                  className="btn btn-warning w-100 mt-2">
                     Shipping
                   </button>
                 </td>

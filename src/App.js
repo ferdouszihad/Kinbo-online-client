@@ -11,6 +11,9 @@ import SingleProduct from "./pages/SingleProduct/SingleProduct";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import SignUp from "./pages/Shared/SignUp/SignUp";
+import Shipping from "./pages/Shipping/Shipping";
+import Checkout from "./pages/Checkout/Checkout";
+import Payment from "./pages/Payment/Payment";
 
 function App() {
   return (
@@ -21,9 +24,13 @@ function App() {
         <Route path="/home" element={<Home />}></Route>
         <Route path="/about" element={<About />}></Route>
         <Route path="/cart" element={<Cart/>}></Route>
-        <Route path="/product/:id" element={<SingleProduct></SingleProduct>}></Route>
+        <Route path="/product/:id" element={<SingleProduct/>}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/signup" element={<SignUp/>}></Route>
+        <Route path="/shipping" element={<Shipping/>}></Route>
+        <Route path="/checkout" element={<Checkout/>}></Route>
+        <Route path="/payment/:id" element={<Payment></Payment>}></Route>
+        
       </Routes>
       <Footer></Footer>
       <ToastContainer />
