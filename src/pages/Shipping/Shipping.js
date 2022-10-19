@@ -34,20 +34,10 @@ const Shipping = () => {
   }
 
   return (
-    <div className="mt-5 mb-3">
-      <nav>
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item">
-            <a href="#">Home</a>
-          </li>
-          <li class={`breadcrumb-item ${active ? "bg-warning" : ""}`}>
-            Shipping
-          </li>
-        </ol>
-      </nav>
+    <div className="container py-4">
       <h2 className="text-center">Shipping Address</h2>
       <div className="row">
-        <div className="col-md-7 mx-auto">
+        <div className="col-md-8 mx-auto">
           <form onSubmit={handleSubmit(onSubmit)} className="row g-3">
             <div>
               <label for="inputPassword4" className="form-label">

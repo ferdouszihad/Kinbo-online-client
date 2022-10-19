@@ -52,7 +52,7 @@ const SignUp = () => {
             <input type="password" class="form-control" name="password" />
           </div>
 
-          <button type="submit" class="btn btn-primary">
+          <button type="submit" class="btn btn-warning">
             Signup
           </button>
         </form>
