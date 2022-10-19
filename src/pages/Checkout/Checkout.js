@@ -36,20 +36,20 @@ const Checkout = () => {
   };
 
   return (
-    <div className="container">
-      <h2 className="text-center">This check out page</h2>
-      <div className="row mt-2">
-        <div className="col-md-6">
-          <h2 className="my-2">shipping Address</h2>
-          <h5>Name:{user.name}</h5>
-          <p>Address1:{user.address1}</p>
-          <p>Address2:{user.address2}</p>
-          <p>City:{user.city}</p>
-          <p>State:{user.state}</p>
-          <p>Zip:{user.zip}</p>
+    <div className="container py-4 mt-3">
+      <h2 className="text-center">Checkout page</h2>
+      <div className="row mt-4 d-flex justify-content-center">
+        <div className="col-md-5 shadow-sm p-3 mb-5 bg-body rounded me-4">
+          <h4 className="py-2 mb-3 border-bottom">Shipping address</h4>
+          <p>Name: {user.name}</p>
+          <p>Address1: {user.address1}</p>
+          <p>Address2: {user.address2}</p>
+          <p>City: {user.city}</p>
+          <p>State: {user.state}</p>
+          <p>Zip: {user.zip}</p>
         </div>
-        <div className="col-md-6">
-          <h2>Cart Info</h2>
+        <div className="col-md-5 shadow-sm p-3 mb-5 bg-body rounded">
+          <h4 className="py-2 mb-3 border-bottom">Cart info</h4>
           {data.map((item) => (
             <>
               <p>
