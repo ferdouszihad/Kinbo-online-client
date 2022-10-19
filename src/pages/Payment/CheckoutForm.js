@@ -88,7 +88,7 @@ const CheckoutForm = (props) => {
           }}
         />
         <button
-          className="btn btn-warning mt-3"
+          className="btn btn-warning mt-4 mb-2"
           type="submit"
           disabled={!stripe || !clientSecret}
         >

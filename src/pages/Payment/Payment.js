@@ -3,6 +3,7 @@ import { loadStripe } from "@stripe/stripe-js";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import CheckoutForm from "./CheckoutForm";
+import stripe from "../images/stripe.png";
 
 const stripePromise = loadStripe(
   "pk_test_51L2CogCzzWb5ebzSfSId9ulpBtV5mGSiaf2jfi5kXltfG99tKSWr8Zv0mvloAkUKLv4eSlduSha775AlIBvP0FtQ00T8a2XCEb"
@@ -26,10 +27,12 @@ const Payment = () => {
   }, [id]);
 
   return (
-    <div>
-      <h2 className="text-center">Payment</h2>
+    <div className="container p-5">
+      <div className="text-center">
+        <img src={stripe} alt="" />
+      </div>
       <div className="row py-4">
-        <div className="col-md-3 mx-auto border p-4 bordered">
+        <div className="col-md-5 mx-auto shadow-lg p-4  mb-5 bg-body rounded">
           <Elements stripe={stripePromise}>
             <CheckoutForm order={order} />
           </Elements>
