@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { FaTrash } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import "./Cart.css";
 const Cart = () => {
   const [cart, setCart] = useState([]);
   const [remove, setRemove] = useState(true);
@@ -114,9 +115,10 @@ const Cart = () => {
                   </td>
                   <td>{item.price * item.quantity}</td>
                   <td>
-                    <button onClick={() => handleDeleteItem(item._id)}>
-                      <FaTrash />
-                    </button>
+                    <FaTrash
+                      className="delete-btn"
+                      onClick={() => handleDeleteItem(item._id)}
+                    />
                   </td>
                 </tr>
               ))}
