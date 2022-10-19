@@ -4,9 +4,8 @@ import { useNavigate } from "react-router-dom";
 const Checkout = () => {
   const [data, setdata] = useState([]);
   const [user, setUser] = useState({});
-  const [cart, setCart] = useState({});
-  
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+
   useEffect(() => {
     fetch(`http://localhost:8000/api/cart`, {
       headers: {
@@ -15,30 +14,26 @@ const Checkout = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setdata(data);
         setUser(data[0].userId);
       });
   }, []);
 
-  const handlePayment = () =>{
-     const url = `http://localhost:8000/api/order`;
-     fetch(url,{
-       method:'POST',
-       headers:{
-          'Authorization':localStorage.getItem('token')
-       }
-     })
-     .then(res => res.json())
-     .then(data => {
-        if(data.status){
-
-           navigate(`/payment/${data._id}`)
-           
+  const handlePayment = () => {
+    const url = `http://localhost:8000/api/order`;
+    fetch(url, {
+      method: "POST",
+      headers: {
+        Authorization: localStorage.getItem("token"),
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.status) {
+          navigate(`/payment/${data._id}`);
         }
-     })
-
-  }
+      });
+  };
 
   return (
     <div className="container">
@@ -62,12 +57,11 @@ const Checkout = () => {
                 <span>{item.quantity}</span> ={" "}
                 <span>{item.quantity * item.price}</span>
               </p>
-
             </>
           ))}
-          <button 
-          onClick={handlePayment}
-          className="btn btn-warning">Payment</button>
+          <button onClick={handlePayment} className="btn btn-warning">
+            Payment
+          </button>
         </div>
       </div>
     </div>

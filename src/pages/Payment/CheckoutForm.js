@@ -7,33 +7,27 @@ import {
 } from "@stripe/react-stripe-js";
 
 const CheckoutForm = (props) => {
-  console.log(props);
-  const {amount,userId} = props.order;
- console.log(amount,userId);
-
+  const { amount, userId } = props.order;
   const stripe = useStripe();
   const elements = useElements();
   const [cardError, setCardError] = useState("");
   const [clientSecret, setClientSecret] = useState("");
-  const [success,setSuccess] = useState('')
-  const [paymentId,setPaymentId] = useState('');
+  const [success, setSuccess] = useState("");
+  const [paymentId, setPaymentId] = useState("");
 
   useEffect(() => {
-    console.log("inside useeffect",amount);
     fetch(`http://localhost:8000/create-payment-intend`, {
       method: "POST",
-      headers:{
-        'Content-Type':'Application/json'
+      headers: {
+        "Content-Type": "Application/json",
       },
       body: JSON.stringify({ amount }),
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
-        setClientSecret(data.clientSecret)
-        console.log('client',clientSecret);
+        setClientSecret(data.clientSecret);
       });
-  }, [amount,props]);
+  }, [amount, props]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -53,29 +47,26 @@ const CheckoutForm = (props) => {
     setCardError(error?.message || "");
 
     //confirm card payment
-    const {paymentIntent, error1} = await stripe.confirmCardPayment(
+    const { paymentIntent, error1 } = await stripe.confirmCardPayment(
       clientSecret,
       {
         payment_method: {
           card: card,
           billing_details: {
             name: userId.name,
-            email:userId.email
+            email: userId.email,
           },
         },
-      },
+      }
     );
 
-    if(error1){
-       setCardError(error1?.message)
+    if (error1) {
+      setCardError(error1?.message);
+    } else {
+      setCardError("");
+      setSuccess("Payment Completed!");
+      setPaymentId(paymentIntent.id);
     }
-    else{
-      setCardError('');
-      setSuccess('Payment Completed!')
-      setPaymentId(paymentIntent.id)
-      console.log(paymentIntent);
-    }
-
   };
   return (
     <div>

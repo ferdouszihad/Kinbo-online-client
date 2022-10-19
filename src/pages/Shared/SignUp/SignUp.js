@@ -1,5 +1,4 @@
 import React from "react";
-import { Navigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const SignUp = () => {
@@ -14,19 +13,18 @@ const SignUp = () => {
       headers: {
         "Content-Type": "Application/json",
       },
-      body: JSON.stringify({name, email, password, }),
+      body: JSON.stringify({ name, email, password }),
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (!data.status) {
           toast.error(data.message, {
             position: toast.POSITION.TOP_CENTER,
           });
         } else {
-           toast.success('Signup done',{
+          toast.success("Signup done", {
             position: toast.POSITION.TOP_CENTER,
-           })
+          });
         }
       });
   };

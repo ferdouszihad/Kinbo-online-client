@@ -11,11 +11,9 @@ const Products = (props) => {
 
   return (
     <div className="row">
-      {
-      products.map((product) => (
-        <Product  product={product} />
-      ))
-      }
+      {products.map((product) => (
+        <Product product={product} />
+      ))}
     </div>
   );
 };

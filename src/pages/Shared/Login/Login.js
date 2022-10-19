@@ -18,14 +18,13 @@ const Login = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (!data.status) {
           toast.error(data.message, {
             position: toast.POSITION.TOP_CENTER,
           });
         } else {
-           localStorage.setItem('token',`Bearer ${data.token}`)
-           navigate('/home');
+          localStorage.setItem("token", `Bearer ${data.token}`);
+          navigate("/home");
         }
       });
   };

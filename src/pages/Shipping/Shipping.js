@@ -3,31 +3,30 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 
 const Shipping = () => {
-  const navigate  = useNavigate()
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
 
   const onSubmit = (data) => {
-       const url = `http://localhost:8000/api/user/update`;
-       fetch(url,{
-        method:"PATCH",
-        headers:{
-          'Content-Type':'Application/json',
-          'Authorization':localStorage.getItem('token')
-        },
-        body:JSON.stringify(data)
-      })
-      .then(res=>res.json())
-      .then(data => {
-         if(data.status){
-            navigate('/checkout')
-         }
-      })
-  }
+    const url = `http://localhost:8000/api/user/update`;
+    fetch(url, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "Application/json",
+        Authorization: localStorage.getItem("token"),
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.status) {
+          navigate("/checkout");
+        }
+      });
+  };
 
   let active = false;
   if (window.location?.pathname === "/shipping") {

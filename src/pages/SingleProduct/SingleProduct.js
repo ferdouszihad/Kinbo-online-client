@@ -14,7 +14,6 @@ const SingleProduct = () => {
 
   const hadleAddToCart = () => {
     const { _id, price } = product;
-
     const url = `http://localhost:8000/api/cart`;
     fetch(url, {
       method: "POST",

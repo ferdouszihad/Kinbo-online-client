@@ -9,29 +9,29 @@ const stripePromise = loadStripe(
 );
 
 const Payment = () => {
-   const [order,setOrder] = useState([]);
-   const {id} = useParams();
-   useEffect(()=>{
-      const url = `http://localhost:8000/api/order/${id}`;
-      fetch(url,{
-        headers:{
-          'Authorization':localStorage.getItem('token')
-        }
-      })
-      .then(res=>res.json())
-      .then(data => {
-        setOrder(data)
-        console.log(data);
-      })
-   },[id])
-   console.log(order);
+  const [order, setOrder] = useState([]);
+  const { id } = useParams();
+
+  useEffect(() => {
+    const url = `http://localhost:8000/api/order/${id}`;
+    fetch(url, {
+      headers: {
+        Authorization: localStorage.getItem("token"),
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setOrder(data);
+      });
+  }, [id]);
+
   return (
     <div>
       <h2 className="text-center">Payment</h2>
       <div className="row py-4">
         <div className="col-md-3 mx-auto border p-4 bordered">
           <Elements stripe={stripePromise}>
-            <CheckoutForm  order={order}/>
+            <CheckoutForm order={order} />
           </Elements>
         </div>
       </div>
