@@ -5,6 +5,7 @@
 
 .quick-links li{
    list-style:none;
+   margin-bottom: 10px;
 }
 
 .quick-links li a{
