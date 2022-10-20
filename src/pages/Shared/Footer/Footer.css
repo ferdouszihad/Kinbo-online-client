@@ -1,3 +1,13 @@
 .footer{
     background:#F8F9FA;
 }
+
+
+.quick-links li{
+   list-style:none;
+}
+
+.quick-links li a{
+   
+    text-decoration:none;
+}

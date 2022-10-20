@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import ReactLoading from "react-loading";
 import Product from "./Product";
 
 const Products = (props) => {
@@ -9,6 +10,18 @@ const Products = (props) => {
       .then((data) => setProducts(data));
   }, []);
 
+  if (products.length === 0) {
+    return (
+      <div className="d-flex justify-content-center">
+        <ReactLoading
+          type={"bubbles"}
+          color={"#FFCA2C"}
+          height={"15%"}
+          width={"15%"}
+        ></ReactLoading>
+      </div>
+    );
+  }
   return (
     <div className="row">
       {products.map((product) => (
