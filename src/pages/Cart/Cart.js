@@ -82,7 +82,7 @@ const Cart = () => {
       <h2 className="my-5">Cart page</h2>
       {cart.length === 0 ? (
         <div>
-          <img width="50%" src="https://i.ibb.co/C7c04cd/cart.jpg" alt="" />
+           <img width="20%" src="https://i.ibb.co/g6YBRy9/shopping-cart.gif" alt="" />
         </div>
       ) : (
         <div className="mt-5">
