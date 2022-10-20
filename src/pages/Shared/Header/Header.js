@@ -43,7 +43,7 @@ const Header = () => {
             <div className="me-2 animate__animated animate__slideInLeft">
               <Link to="/cart">
                 <BsFillCartCheckFill
-                  style={{ fontSize: "30px", color: "orange" }}
+                  style={{ fontSize: "30px", color: "#DB675D" }}
                 />
               </Link>
             </div>

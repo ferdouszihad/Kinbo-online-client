@@ -29,7 +29,7 @@ const Payment = () => {
   return (
     <div className="container p-5">
       <div className="text-center">
-        <img src={stripe} alt="" />
+        <img className="animate__animated animate__bounce" src={stripe} alt="" />
       </div>
       <div className="row py-4">
         <div className="col-md-5 mx-auto shadow-lg p-4  mb-5 bg-body rounded">
