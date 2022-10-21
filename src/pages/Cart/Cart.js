@@ -46,24 +46,25 @@ const Cart = () => {
       });
   };
 
-  const handleUpdate = async (event, _id) => {
+  const handleUpdateItem = async (_id, action) => {
     const i = cart.findIndex((item) => item._id === _id);
-    const quantity = +event.target.value;
-    const newCart = [...cart];
-    newCart[i].quantity = quantity;
-
-    setCart([...newCart]);
-
+    let cartItem = cart[i];
+    if (action === "plus") {
+      cartItem.quantity += 1;
+    }
+    if (cartItem.quantity > 1 && action === "minus") {
+      cartItem.quantity -= 1;
+    } 
+   
     const url = `http://localhost:8000/api/cart/`;
     const res = await fetch(url, {
       method: "PUT",
       headers: {
-        "Content-Type": "Application/json",
+        "Content-type": "Application/json",
         Authorization: localStorage.getItem("token"),
       },
-      body: JSON.stringify({ _id, quantity }),
+      body: JSON.stringify({ _id, cart: cart[i] }),
     });
-
     const data = await res.json();
     if (data.status) {
       setRemove(!remove);
@@ -82,7 +83,11 @@ const Cart = () => {
       <h2 className="my-5">Cart page</h2>
       {cart.length === 0 ? (
         <div>
-           <img width="20%" src="https://i.ibb.co/g6YBRy9/shopping-cart.gif" alt="" />
+          <img
+            width="20%"
+            src="https://i.ibb.co/g6YBRy9/shopping-cart.gif"
+            alt=""
+          />
         </div>
       ) : (
         <div className="mt-5">
@@ -106,12 +111,25 @@ const Cart = () => {
                   <td>{item.productId?.name}</td>
                   <td>{item.price}</td>
                   <td>
-                    <input
+                    {/* <input
                       onChange={(event) => handleUpdate(event, item._id)}
                       type="number"
                       min="1"
                       max="5"
-                    />
+                    /> */}
+                    <button
+                      className="btn border"
+                      onClick={() => handleUpdateItem(item._id, "plus")}
+                    >
+                      +
+                    </button>
+                    <span className="mx-3">{item.quantity}</span>
+                    <button
+                      className="btn border"
+                      onClick={() => handleUpdateItem(item._id, "minus")}
+                    >
+                      -
+                    </button>
                   </td>
                   <td>{item.price * item.quantity}</td>
                   <td>
@@ -126,6 +144,7 @@ const Cart = () => {
           </table>
         </div>
       )}
+
       {/* cart total */}
       <div className="row my-5">
         <div className="col-md-4 ms-auto">
