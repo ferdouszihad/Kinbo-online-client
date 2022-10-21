@@ -37,7 +37,7 @@ const Shipping = () => {
     <div className="container py-4">
       <h2 className="text-center">Shipping Address</h2>
       <div className="row">
-        <div className="col-md-8 mx-auto">
+        <div className="col-md-8 mx-auto shadow-sm p-3 mb-5 bg-body rounded">
           <form onSubmit={handleSubmit(onSubmit)} className="row g-3">
             <div>
               <label for="inputPassword4" className="form-label">
