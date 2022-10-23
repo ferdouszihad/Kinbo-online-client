@@ -8,7 +8,7 @@ const Header = () => {
       <nav className="navbar navbar-expand-lg bg-light">
         <div className="container py-3">
           <Link className="navbar-brand" to="/">
-            Navbar
+            <img width="60" src="https://i.ibb.co/vVHC4x7/logo1.png" alt="" />
           </Link>
           <button
             className="navbar-toggler"

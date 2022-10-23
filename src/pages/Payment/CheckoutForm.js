@@ -7,7 +7,7 @@ import {
 } from "@stripe/react-stripe-js";
 
 const CheckoutForm = (props) => {
-  const { amount, userId } = props.order;
+  const { amount, userId,orderId} = props.order;
   const stripe = useStripe();
   const elements = useElements();
   const [cardError, setCardError] = useState("");
@@ -66,6 +66,28 @@ const CheckoutForm = (props) => {
       setCardError("");
       setSuccess("Payment Completed!");
       setPaymentId(paymentIntent.id);
+      //update payment info
+      
+      const url  = `http://localhost:8000/api/order/${orderId}`;
+
+      const payment = {
+        paid:true,
+        transactionId:paymentIntent.id,
+        userId:userId,
+        amount:amount
+      }
+
+      fetch(url,{
+        method:"PATCH",
+        headers:{
+          "Content-Type":"Application/json"
+        },
+        body:JSON.stringify(payment)
+      })
+      .then(res=>res.json())
+      .then(data=>{
+        console.log("payment info",data);
+      })
     }
   };
   return (

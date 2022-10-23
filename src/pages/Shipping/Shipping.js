@@ -52,6 +52,19 @@ const Shipping = () => {
                 <p className="text-danger my-2">{errors.name?.message}</p>
               )}
             </div>
+            <div>
+              <label for="inputPassword4" className="form-label">
+                Phone
+              </label>
+              <input
+                type="phone"
+                {...register("phone", { required: "Phone is required" })}
+                className="form-control"
+              />
+              {errors.name && (
+                <p className="text-danger my-2">{errors.phone?.message}</p>
+              )}
+            </div>
             <div className="col-12">
               <label for="inputAddress" className="form-label">
                 Address 1

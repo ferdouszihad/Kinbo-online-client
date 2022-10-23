@@ -68,9 +68,6 @@ const Cart = () => {
     const data = await res.json();
     if (data.status) {
       setRemove(!remove);
-      toast.success(data.message, {
-        position: toast.POSITION.TOP_CENTER,
-      });
     }
   };
 
@@ -111,12 +108,6 @@ const Cart = () => {
                   <td>{item.productId?.name}</td>
                   <td>{item.price}</td>
                   <td>
-                    {/* <input
-                      onChange={(event) => handleUpdate(event, item._id)}
-                      type="number"
-                      min="1"
-                      max="5"
-                    /> */}
                     <button
                       className="btn border"
                       onClick={() => handleUpdateItem(item._id, "plus")}

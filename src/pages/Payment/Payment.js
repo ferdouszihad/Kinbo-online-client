@@ -34,7 +34,7 @@ const Payment = () => {
       <div className="row py-4">
         <div className="col-md-5 mx-auto shadow-lg p-4  mb-5 bg-body rounded">
           <Elements stripe={stripePromise}>
-            <CheckoutForm order={order} />
+            <CheckoutForm order={{...order,orderId:id}} />
           </Elements>
         </div>
       </div>

@@ -42,6 +42,7 @@ const Checkout = () => {
         <div className="col-md-5 shadow-sm p-3 mb-5 bg-body rounded me-4">
           <h4 className="py-2 mb-3 border-bottom">Shipping address</h4>
           <p>Name: {user.name}</p>
+          <p>Phone: {user.phone}</p>
           <p>Address1: {user.address1}</p>
           <p>Address2: {user.address2}</p>
           <p>City: {user.city}</p>
