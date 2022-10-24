@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { FaTrash } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import PageTitle from "../../pages/Shared/PageTitle/PageTitle"
 import "./Cart.css";
 const Cart = () => {
   const [cart, setCart] = useState([]);
@@ -77,6 +78,7 @@ const Cart = () => {
 
   return (
     <div className="container text-center">
+      <PageTitle title="Cart"></PageTitle>
       <h2 className="my-5">Cart page</h2>
       {cart.length === 0 ? (
         <div>
@@ -122,7 +124,7 @@ const Cart = () => {
                       -
                     </button>
                   </td>
-                  <td>{item.price * item.quantity}</td>
+                  <td>{item.price * item.quantity} tk</td>
                   <td>
                     <FaTrash
                       className="delete-btn"

@@ -1,6 +1,6 @@
 import React from "react";
 import { toast } from "react-toastify";
-
+import PageTitle from "../../Shared/PageTitle/PageTitle";
 const SignUp = () => {
   const handleSignUp = (event) => {
     event.preventDefault();
@@ -30,6 +30,7 @@ const SignUp = () => {
   };
   return (
     <div className="container d-flex justify-content-center my-5">
+      <PageTitle title="Signup"></PageTitle>
       <div className="col-md-6 shadow-sm p-3 mb-5 bg-body rounded">
         <h2 className="text-center py-3">Please Signup</h2>
         <form onSubmit={handleSignUp}>

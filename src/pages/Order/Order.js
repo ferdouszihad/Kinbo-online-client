@@ -1,4 +1,5 @@
 import React ,{useState,useEffect} from "react";
+import PageTitle from "../../pages/Shared/PageTitle/PageTitle";
 import "./Order.css";
 
 const Order = () => {
@@ -21,6 +22,7 @@ const Order = () => {
   
   return (
     <div className="container my-5">
+      <PageTitle title="Order"></PageTitle>
       <h2 className="text-center">Order Details</h2>
       <div className="row my-4">
         <table className="table">
@@ -40,8 +42,8 @@ const Order = () => {
                 <tr className={`${ d === order.createdAt?.slice(0,10) ? "bg-table":""}`}>
                     <td>{index + 1}</td>
                     <td>{order._id}</td>
-                    <td>{order.transactionId}</td>
-                    <td>{order.amount} tk</td>
+                    <td>{order.transactionId ? order.transactionId : "No payment"}</td>
+                    <td>{order.amount ? order.amount : "0"} tk</td>
                     <td>
                      {
                       order.delivery === "pending" ?

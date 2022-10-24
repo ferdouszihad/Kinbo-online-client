@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-
+import PageTitle from "../../Shared/PageTitle/PageTitle";
 const Login = () => {
   const navigate = useNavigate();
   const handleLogin = (event) => {
@@ -30,6 +30,7 @@ const Login = () => {
   };
   return (
     <div className="container d-flex justify-content-center my-5">
+      <PageTitle title="Login"></PageTitle>
       <div className="col-md-6 shadow-sm p-3 mb-5 bg-body rounded">
         <h2 className="text-center py-3">Please Login</h2>
         <form onSubmit={handleLogin}>

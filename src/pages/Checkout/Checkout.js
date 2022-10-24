@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import PageTitle from "../Shared/PageTitle/PageTitle";
 
 const Checkout = () => {
   const [data, setdata] = useState([]);
@@ -37,6 +38,7 @@ const Checkout = () => {
 
   return (
     <div className="container py-4 mt-3">
+      <PageTitle title="Checkout"></PageTitle>
       <h2 className="text-center">Checkout page</h2>
       <div className="row mt-4 d-flex justify-content-center">
         <div className="col-md-5 shadow-sm p-3 mb-5 bg-body rounded me-4">

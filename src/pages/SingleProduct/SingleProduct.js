@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
+import PageTitle from "../Shared/PageTitle/PageTitle";
 
 const SingleProduct = () => {
   const [product, setProduct] = useState({});
@@ -41,6 +42,7 @@ const SingleProduct = () => {
   };
   return (
     <div className="container my-5">
+      <PageTitle title="Product"></PageTitle>
       <div className="row">
         <div className="col-md-6 text-end pe-5">
           <img src={product.img} alt="" />

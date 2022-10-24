@@ -8,7 +8,7 @@ const Header = () => {
       <nav className="navbar navbar-expand-lg bg-light">
         <div className="container py-3">
           <Link className="navbar-brand" to="/">
-            <img width="60" src="https://i.ibb.co/vVHC4x7/logo1.png" alt="" />
+            <img width="65" src="https://i.ibb.co/vVHC4x7/logo1.png" alt="" />
           </Link>
           <button
             className="navbar-toggler"
@@ -45,14 +45,14 @@ const Header = () => {
                 <li className="nav-item pt-1">
                   <Link to="/cart">
                     <BsFillCartCheckFill
-                      style={{ fontSize: "30px" ,color:"#4D4D4E" }}
+                      style={{ fontSize: "30px", color: "#4D4D4E" }}
                     />
                   </Link>
                 </li>
                 <li className="nav-item pt-1 ms-2">
                   <Link to="/order">
                     <HiUserCircle
-                      style={{ fontSize: "30px",color:"#4D4D4E" }}
+                      style={{ fontSize: "30px", color: "#4D4D4E" }}
                     />
                   </Link>
                 </li>

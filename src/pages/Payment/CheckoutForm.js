@@ -5,6 +5,8 @@ import {
   useStripe,
   useElements,
 } from "@stripe/react-stripe-js";
+import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
 
 const CheckoutForm = (props) => {
   const { amount, userId,orderId} = props.order;
@@ -65,6 +67,9 @@ const CheckoutForm = (props) => {
     } else {
       setCardError("");
       setSuccess("Payment Completed!");
+      toast(<Link to="/order">View Order</Link>,{
+        position: toast.POSITION.TOP_CENTER
+      })
       setPaymentId(paymentIntent.id);
       //update payment info
       

@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import PageTitle from "../Shared/PageTitle/PageTitle";
 
 const Shipping = () => {
   const navigate = useNavigate();
@@ -35,6 +36,7 @@ const Shipping = () => {
 
   return (
     <div className="container py-4">
+      <PageTitle title="Shipping"></PageTitle>
       <h2 className="text-center">Shipping Address</h2>
       <div className="row">
         <div className="col-md-8 mx-auto shadow-sm p-3 mb-5 bg-body rounded">
