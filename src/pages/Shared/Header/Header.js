@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { BsFillCartCheckFill } from "react-icons/bs";
-
+import { HiUserCircle } from "react-icons/hi";
 const Header = () => {
   return (
     <div>
@@ -28,24 +28,35 @@ const Header = () => {
                   About
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/login">
-                  Login
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/signup">
-                  Signup
-                </Link>
-              </li>
             </ul>
-            {/* cart */}
-            <div className="me-2 animate__animated animate__slideInLeft">
-              <Link to="/cart">
-                <BsFillCartCheckFill
-                  style={{ fontSize: "30px", color: "#FFC107" }}
-                />
-              </Link>
+            {/* header right*/}
+            <div className="me-2">
+              <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                <li className="nav-item">
+                  <Link className="nav-link" to="/login">
+                    Login
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/signup">
+                    Signup
+                  </Link>
+                </li>
+                <li className="nav-item pt-1">
+                  <Link to="/cart">
+                    <BsFillCartCheckFill
+                      style={{ fontSize: "30px" ,color:"#4D4D4E" }}
+                    />
+                  </Link>
+                </li>
+                <li className="nav-item pt-1 ms-2">
+                  <Link to="/order">
+                    <HiUserCircle
+                      style={{ fontSize: "30px",color:"#4D4D4E" }}
+                    />
+                  </Link>
+                </li>
+              </ul>
             </div>
           </div>
         </div>

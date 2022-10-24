@@ -12,6 +12,7 @@ import Shipping from "./pages/Shipping/Shipping";
 import Checkout from "./pages/Checkout/Checkout";
 import Payment from "./pages/Payment/Payment";
 import { ToastContainer } from "react-toastify";
+import Order from "./pages/Order/Order";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path="/shipping" element={<Shipping />}></Route>
         <Route path="/checkout" element={<Checkout />}></Route>
         <Route path="/payment/:id" element={<Payment />}></Route>
+        <Route path="/order" element={<Order/>}></Route>
       </Routes>
       <Footer></Footer>
       <ToastContainer />
