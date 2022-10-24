@@ -1,4 +1,5 @@
 import React ,{useState,useEffect} from "react";
+import "./Order.css";
 
 const Order = () => {
   const [orders,setOrders] = useState([]);
@@ -14,7 +15,10 @@ const Order = () => {
      .then(data => setOrders(data))
      
   },[])
-  console.log(orders);
+  
+  let d = new Date().toISOString().slice(0,10);
+  console.log(d);
+  
   return (
     <div className="container my-5">
       <h2 className="text-center">Order Details</h2>
@@ -31,9 +35,9 @@ const Order = () => {
             </tr>
           </thead>
           <tbody>
-            {
+            {  
                 orders.map((order,index) =>  
-                <tr>
+                <tr className={`${ d === order.createdAt?.slice(0,10) ? "bg-table":""}`}>
                     <td>{index + 1}</td>
                     <td>{order._id}</td>
                     <td>{order.transactionId}</td>
@@ -43,7 +47,7 @@ const Order = () => {
                       order.delivery === "pending" ?
                       <p className="text-danger">pending</p>
                       :
-                      <p className="primary">completed</p>
+                      <p className="text-primary">completed</p>
                      }
                     </td>
                     <td>{order.createdAt?.slice(0,10)}</td>
