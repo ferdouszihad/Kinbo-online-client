@@ -10,8 +10,8 @@ const Footer = () => {
           <div className="col-md-4">
             <h5 className="text-bold mb-3">Contact Us</h5>
             <p>Call us 24/7</p>
-            <h3>+8801818857587</h3>
-            <p>Dhaka,Bangladesh</p>
+            <h4>+8801818857587</h4>
+            <p>Dinajpur,Bangladesh</p>
           </div>
           <div className="col-md-4">
             <h5 className="mb-3">Quick Links</h5>

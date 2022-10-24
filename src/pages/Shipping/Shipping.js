@@ -116,8 +116,15 @@ const Shipping = () => {
                 {...register("state", { required: "State is required" })}
                 className="form-select"
               >
-                <option selected>Khulna</option>
+                <option selected>-----</option>
+                <option>Khulna</option>
                 <option>Cumilla</option>
+                <option>Dinajpur</option>
+                <option>Noahkhali</option>
+                <option>Barishal</option>
+                <option>Rajshahi</option>
+                <option>Tangail</option>
+                <option>Pabna</option>
               </select>
               {errors.state && (
                 <p className="text-danger my-2">{errors.state?.message}</p>

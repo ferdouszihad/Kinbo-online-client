@@ -106,7 +106,7 @@ const Cart = () => {
                     <img width="80" src={item.productId?.img} alt="" />
                   </th>
                   <td>{item.productId?.name}</td>
-                  <td>{item.price}</td>
+                  <td>{item.price} tk</td>
                   <td>
                     <button
                       className="btn border"
@@ -148,11 +148,11 @@ const Cart = () => {
             <tbody>
               <tr>
                 <td>SubTotal</td>
-                <td>ট {total}</td>
+                <td>{total} tk</td>
               </tr>
               <tr>
                 <td>Total</td>
-                <td>ট {total}</td>
+                <td>{total} tk</td>
               </tr>
               <tr>
                 <td colSpan={2}>
