@@ -45,13 +45,13 @@ const SingleProduct = () => {
       <PageTitle title="Product"></PageTitle>
       <div className="row">
         <div className="col-md-6 text-end pe-5">
-          <img src={product.img} alt="" />
+          <img src={product.img} alt="" class="img-fluid" />
         </div>
         <div className="col-md-6">
           <h2>{product.name}</h2>
           <p>{product.description}</p>
           <p>Category:{product.category}</p>
-          <p>Price:{product.price}</p>
+          <p>Price:{product.price} Taka</p>
           <p>Quantity:{product.quantity}</p>
           <button
             type="button"

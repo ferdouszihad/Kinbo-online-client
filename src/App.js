@@ -29,7 +29,7 @@ function App() {
         <Route path="/shipping" element={<Shipping />}></Route>
         <Route path="/checkout" element={<Checkout />}></Route>
         <Route path="/payment/:id" element={<Payment />}></Route>
-        <Route path="/order" element={<Order/>}></Route>
+        <Route path="/order" element={<Order />}></Route>
       </Routes>
       <Footer></Footer>
       <ToastContainer />

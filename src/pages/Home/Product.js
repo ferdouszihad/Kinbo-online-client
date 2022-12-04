@@ -26,11 +26,11 @@ const Product = (props) => {
   };
 
   return (
-    <div className="col-md-4 text-center my-3">
-      <img src={img} alt="" />
+    <div className=" text-center my-3">
+      <img src={img} alt="" className="img-fluid" />
       <h3 className="my-2">{name}</h3>
       <p>{description}</p>
-      <p>Price:{price}</p>
+      <p>Price:{price} Taka</p>
       <p>Quantity:{quantity}</p>
       <button
         onClick={() => handleAddToCart(_id)}

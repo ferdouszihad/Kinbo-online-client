@@ -11,6 +11,7 @@ const Login = () => {
     const url = "http://localhost:8000/api/user/signin";
     fetch(url, {
       method: "POST",
+
       headers: {
         "Content-Type": "Application/json",
       },
